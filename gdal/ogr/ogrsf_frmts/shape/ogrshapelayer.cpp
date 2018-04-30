@@ -1846,13 +1846,8 @@ OGRErr OGRShapeLayer::CreateField( OGRFieldDefn *poFieldDefn, int bApproxOK )
             break;
 
         case OFTDateTime:
-            CPLError(
-                CE_Warning, CPLE_NotSupported,
-                "Field %s create as date field, though DateTime requested.",
-                szNewFieldName );
-            chType = 'D';
-            nWidth = 8;
-            oModFieldDefn.SetType( OFTDate );
+            chType = 'C';
+            nWidth = 29;
             break;
 
         default:
